@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crafting Interactions</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<header>
+
+		<!-- <h2>ofCourse header</h2> -->
+
+	</header>
+
+	<div id='mainContainer'>
+			
+		<div id='questionsContainer'>
+			<p>你觉得下面哪一个代码能够正确表画出下图的icon？</p>
+			<div id='iconContainer'>
+				<div class="chat icon"></div>
+			</div>
+		</div>
+		
+
+
+
+		<div id='answersContainer'>
+			<div class='answers' id='answer1'>
+				<p>.chat.icon { <br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp color: #000;<br/>
+ 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp position: absolute;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp margin-left: 2px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp margin-top: 4px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp width: 15px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp height: 10px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border: solid 1px currentColor;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-radius: 2px;<br/>
+					}
+				</p>
+			</div>
+			<div class='answers' id='answer2'>
+				<p>.chat.icon:before { <br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp content: '';<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp position: absolute;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp left: 3px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp top: 8px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp width: 4px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp height: 4px;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -webkit-transform: rotate(45deg);<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp transform: rotate(45deg);<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp background-color: lightgrey;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-bottom: solid 1px currentColor;<br/>
+  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-right: solid 1px currentColor;<br/>
+					}
+				</p>
+			</div>
+			<div class='answers' id='answer3'>
+				<p>A与B结合</p>
+			</div>
+
+			<div class='answers' id='answers4'>
+				<p>A与B哪个都可以</p>
+			</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
