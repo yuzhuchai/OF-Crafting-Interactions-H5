@@ -99,7 +99,8 @@ h2 {
 		width: 100%;
 	}
 
-	.answers:focus {
+/*this hover doesnt work on the phone */
+	.answers:hover {
 		background-color:black;
 		color: white;
 	}
