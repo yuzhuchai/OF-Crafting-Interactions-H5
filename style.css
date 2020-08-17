@@ -36,7 +36,7 @@ h2 {
 	}
 
 
-	#mainContainer {
+	.mainContainer {
 		margin:5px;
 		/*background: lightgrey;*/
 		/*color: white;*/
@@ -104,4 +104,8 @@ h2 {
 		background-color:black;
 		color: white;
 	}*/
+
+	#info{
+		display: none;
+	}
 }
