@@ -99,7 +99,7 @@ h2 {
 		width: 100%;
 	}
 
-	.answers:active {
+	.answers:focus {
 		background-color:black;
 		color: white;
 	}
