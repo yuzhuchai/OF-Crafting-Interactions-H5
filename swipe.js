@@ -1,5 +1,5 @@
 console.log("linked swipe")
-let currentPage = null;
+let currentPage = 'homePageContainer';
 let leftPage = null;
 let rightPage = null;
 let touchstartX = 0;
@@ -12,14 +12,14 @@ let swipeLeft = false;
 let swipeRight = false;
 
 
-function swipeFunc(currentPage, leftPage, rightPage){
 
 
-	let gesuredZone = document.getElementById(idHide);
-	console.log(gesuredZone,'<-----gesureZone')
+
+	// let gesuredZone = document.getElementById(currentPage);
+	// console.log(gesuredZone,'<-----gesureZone')
 
 
-	gesuredZone.addEventListener('touchstart', function(e){
+	document.addEventListener('touchstart', function(e){
 
 		touchstartX = e.changedTouches[0].screenX;
 		touchstartY = e.changedTouches[0].screenY;
@@ -28,39 +28,45 @@ function swipeFunc(currentPage, leftPage, rightPage){
 	}, false)
 
 
-	gesuredZone.addEventListener('touchend', function(e){
-		touchstartX = e.changedTouches[0].screenX;
-		touchstartY = e.changedTouches[0].screenY;
+	document.addEventListener('touchend', function(e){
+		touchendX = e.changedTouches[0].screenX;
+		touchendY = e.changedTouches[0].screenY;
 		// console.log(touchstartX,touchstartY,'<=====touched')
-		handleGesure();
+		
+
+		if(currentPage == 'homePageContainer'){
+			handleGesure('homePageContainer','teacherPageContainer','firstQuestionContainer')
+			console.log(currentPage,'<inside event listener')
+		} else if(currentPage == 'teacherPageContainer'){
+			handleGesure('teacherPageContainer', 'teacherPageContainer', 'failedPageContainer')
+		}
+
+
+
+
 	},false);
 
 
-	function handleGesure(){
+
+	function handleGesure(currentPage, leftPage, rightPage){
 		let swiped = 'swiped: ';
 		console.log("this is triggered")
 
 		if (touchendX < touchstartX) {
-	        // alert(swiped + 'left!');
 	        console.log('swipped left, show right page.')
 	        $(`#${currentPage}`).hide()
 	        $(`#${rightPage}`).show()
+	        currentPage = rightPage
+	        console.log(currentPage,'<--iside gesture')
 	    }
 	    if (touchendX > touchstartX) {
+	        // alert(swiped + 'left!');
 	        console.log('swipped right, show left page')
 	       	$(`#${currentPage}`).hide()
 	        $(`#${leftPage}`).show()
-	    }
-	    if (touchendY < touchstartY) {
-	        // alert(swiped + 'down!');
-	    }
-	    if (touchendY > touchstartY) {
-	        // alert(swiped + 'left!');
-	    }
-	    if (touchendY == touchstartY) {
-	        // alert('tap!');
+	        currentPage = leftPage
 	    }
 	}
 
-}
+
 

@@ -6,92 +6,97 @@
 	<title>crafting interaction</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+
+	<!-- <script type="text/javascript" src='page.js'></script> -->
 	<script type="text/javascript" src='swipe.js'></script>
-	<script type="text/javascript" src='app.js'></script>
+	<!-- <script type="text/javascript" src='app.js'></script> -->
 </head>
 
 <body>
+	<div id='mainContainer'> 
 
-	<!-- this is the main div for homePage -->
-	<div class='pageContainer' id='homePageContainer'>
-		<h2><br/>
-			介绍介绍介绍介<br/>
-			<br/>
-			左滑直接老师介绍<br/>
-			右滑是开始做题<br/>
-		</h2>
-	</div>
-
-
-
-
-	<!--this is the main div for lectruer info -->
-	<div class='pageContainer' id='teacherPageContainer'>
-		<h2>
-			老师介绍老师介绍老师介绍<br/>
-			只有右滑<br/>
-			右滑到了挑战失败页面。
-		</h2>
-	</div>
-
-
-
-	<!-- this is main div for failed page -->
-	<div class='pageContainer' id='failedPageContainer'>
-		<h2>
-			挑战失败页面<br/>
-			链接到课程页面<br/>
-			没有右滑，<br/>
-			只有左滑重新挑战。
-		</h2>
-	</div>
-
-
-<!-- this is main div for success page -->
-	<div class='pageContainer' id='successPageContainer'> 
-
-		<h2>
-			挑战成功页面<br/>
-			链接到课程页面
-			挑战成功优惠，截图给客服。
-		</h2>
-	</div>
-
-
-
-	<!-- this is question 1 page -->
-	<div class='pageContainer questionContainer' id='firstQuestionContainer'>
-			<h2>
-				第一个挑战页面<br/>
-				左右滑动选择答案，<br/>
-				正确答案滑到下一关，并且显示一个头衔<br/>
-				错误答案滑倒老师介绍
+		<!-- this is the main div for homePage -->
+		<div class='pageContainer' id='homePageContainer'>
+			<h2><br/>
+				homepage介绍介绍介绍介<br/>
+				<br/>
+				右滑(显示左边页面)直接老师介绍<br/>
+				左滑(显示右边页面)是开始做题<br/>
 			</h2>
-	</div>
+		</div>
+
+
+
+
+		<!--this is the main div for lectruer info -->
+		<div class='pageContainer' id='teacherPageContainer'>
+			<h2>
+				老师介绍老师介绍老师介绍<br/>
+				只有左滑（显示右边页面）<br/>
+				--->挑战失败页面。
+			</h2>
+		</div>
+
+
+
+		<!-- this is main div for failed page -->
+		<div class='pageContainer' id='failedPageContainer'>
+			<h2>
+				挑战失败页面<br/>
+				链接到课程页面<br/>
+				没有右滑，<br/>
+				只有左滑重新挑战。
+			</h2>
+		</div>
+
+
+	<!-- this is main div for success page -->
+		<div class='pageContainer' id='successPageContainer'> 
+
+			<h2>
+				挑战成功页面<br/>
+				链接到课程页面
+				挑战成功优惠，截图给客服。
+			</h2>
+		</div>
 
 
 
 		<!-- this is question 1 page -->
-	<div class='pageContainer questionContainer' id='secondQuestionContainer'>
-			<h2>
-				第一个挑战页面<br/>
-				左右滑动选择答案，<br/>
-				正确答案滑到滑到下一关，并且显示一个头衔，<br/>
-				错误答案滑倒老师介绍
-			</h2>
-	</div>
+		<div class='pageContainer questionContainer' id='firstQuestionContainer'>
+				<h2>
+					第一个挑战页面<br/>
+					左右滑动选择答案，<br/>
+					正确答案滑到下一关，并且显示一个头衔<br/>
+					错误答案滑倒老师介绍
+				</h2>
+		</div>
 
 
-		<!-- this is question 1 page -->
-	<div class='pageContainer questionContainer' id='thirdQuestionContainer'>
-			<h2>
-				第一个挑战页面<br/>
-				左右滑动选择答案，<br/>
-				正确答案滑到挑战成功，并且显示一个头衔，<br/>
-				错误答案滑倒老师介绍
-			</h2>
-	</div>
 
+			<!-- this is question 1 page -->
+		<div class='pageContainer questionContainer' id='secondQuestionContainer'>
+				<h2>
+					第一个挑战页面<br/>
+					左右滑动选择答案，<br/>
+					正确答案滑到滑到下一关，并且显示一个头衔，<br/>
+					错误答案滑倒老师介绍
+				</h2>
+		</div>
+
+
+			<!-- this is question 1 page -->
+		<div class='pageContainer questionContainer' id='thirdQuestionContainer'>
+				<h2>
+					第一个挑战页面<br/>
+					左右滑动选择答案，<br/>
+					正确答案滑到挑战成功，并且显示一个头衔，<br/>
+					错误答案滑倒老师介绍
+				</h2>
+		</div>
+
+	</div> 	<!-- this is the end of main container -->
 
 </body>
 </html>
