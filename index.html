@@ -1,99 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Crafting Interactions沉浸式体验</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	<title>crafting interaction</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" type="text/css"/> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-	<!-- <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" type='text/javascript'></script> -->
-	<!-- <script type="text/javascript" src='jqueryMobile.js'></script> -->
+
 	<script type="text/javascript" src='swipe.js'></script>
 	<script type="text/javascript" src='app.js'></script>
 </head>
+
 <body>
 
-	<header>
-		<!-- <h2>ofCourse header</h2> -->
-	</header>
-
-
-	<div class='mainContainer' id='landingPage'>
-		<div>
-			用户体验介绍<br/>
-			用户体验介绍，<br/>
-			OF主旨介绍，<br/>
-			OF主旨介绍<br/>
-
-			左滑左滑左滑。<br/>
-		</div>
-	</div> <!-- end of landing page container  -->
+	<!-- this is the main div for homePage -->
+	<div class='pageContainer' id='homePageContainer'>
+		<h2><br/>
+			介绍介绍介绍介<br/>
+			<br/>
+			左滑直接老师介绍<br/>
+			右滑是开始做题<br/>
+		</h2>
+	</div>
 
 
 
-	<div class='mainContainer' id='play'>
-			
-		<div id='questionsContainer'>
-			<p>你觉得下面哪一个代码能够正确画出下图的icon？</p>
-			<div id='iconContainer'>
-				<div class="chat icon"></div>
-			</div>
-		</div>
+
+	<!--this is the main div for lectruer info -->
+	<div class='pageContainer' id='teacherPageContainer'>
+		<h2>
+			老师介绍老师介绍老师介绍<br/>
+			只有右滑<br/>
+			右滑到了挑战失败页面。
+		</h2>
+	</div>
 
 
-		<div id='answersContainer'>
-			<div class='answers' id='answer1'>
-				<p>.chat.icon { <br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp color: #000;<br/>
- 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp position: absolute;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp margin-left: 2px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp margin-top: 4px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp width: 15px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp height: 10px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border: solid 1px currentColor;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-radius: 2px;<br/>
-					}
-				</p>
-			</div>
-			<div class='answers' id='answer2'>
-				<p>.chat.icon:before { <br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp content: '';<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp position: absolute;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp left: 3px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp top: 8px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp width: 4px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp height: 4px;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -webkit-transform: rotate(45deg);<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp transform: rotate(45deg);<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp background-color: lightgrey;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-bottom: solid 1px currentColor;<br/>
-  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-right: solid 1px currentColor;<br/>
-					}
-				</p>
-			</div> 
-			<div class='answers' id='answer3 correctAnswer'>
-				<p>A与B结合</p>
-			</div>
 
-			<div class='answers' id='answers4'>
-				<p>A与B哪个都可以</p>
-			</div>
-			</div>
-		</div> 
-	</div>  <!-- end of questions main container --> 
+	<!-- this is main div for failed page -->
+	<div class='pageContainer' id='failedPageContainer'>
+		<h2>
+			挑战失败页面<br/>
+			链接到课程页面<br/>
+			没有右滑，<br/>
+			只有左滑重新挑战。
+		</h2>
+	</div>
 
-	<div class='mainContainer' id='info'>
-		
-		<div id='correctAnswer'>
-			<p>正确答案显示： 比如更多的icon 例子，并介绍文婷老师这个作品，可以给个头衔，比如 UX入门。</p>
-		</div>
 
-		<div id='wrongAnswer'>
-			<p>错误答案显示： 讲解为什么是错的，哪个是正确答案</p>
-		</div>
-	</div> <!-- end of infos main container --> 
+<!-- this is main div for success page -->
+	<div class='pageContainer' id='successPageContainer'> 
+
+		<h2>
+			挑战成功页面<br/>
+			链接到课程页面
+			挑战成功优惠，截图给客服。
+		</h2>
+	</div>
+
+
+
+	<!-- this is question 1 page -->
+	<div class='pageContainer questionContainer' id='firstQuestionContainer'>
+			<h2>
+				第一个挑战页面<br/>
+				左右滑动选择答案，<br/>
+				正确答案滑到下一关，并且显示一个头衔<br/>
+				错误答案滑倒老师介绍
+			</h2>
+	</div>
+
+
+
+		<!-- this is question 1 page -->
+	<div class='pageContainer questionContainer' id='secondQuestionContainer'>
+			<h2>
+				第一个挑战页面<br/>
+				左右滑动选择答案，<br/>
+				正确答案滑到滑到下一关，并且显示一个头衔，<br/>
+				错误答案滑倒老师介绍
+			</h2>
+	</div>
+
+
+		<!-- this is question 1 page -->
+	<div class='pageContainer questionContainer' id='thirdQuestionContainer'>
+			<h2>
+				第一个挑战页面<br/>
+				左右滑动选择答案，<br/>
+				正确答案滑到挑战成功，并且显示一个头衔，<br/>
+				错误答案滑倒老师介绍
+			</h2>
+	</div>
+
 
 </body>
 </html>
-
-

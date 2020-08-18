@@ -1,5 +1,7 @@
 console.log("linked swipe")
-let landingPageShow = true;
+let currentPage = null;
+let leftPage = null;
+let rightPage = null;
 let touchstartX = 0;
 let touchstartY = 0;
 let touchendX = 0;
@@ -10,7 +12,7 @@ let swipeLeft = false;
 let swipeRight = false;
 
 
-function swipeFunc(idHide, idShow){
+function swipeFunc(currentPage, leftPage, rightPage){
 
 
 	let gesuredZone = document.getElementById(idHide);
@@ -40,12 +42,14 @@ function swipeFunc(idHide, idShow){
 
 		if (touchendX < touchstartX) {
 	        // alert(swiped + 'left!');
-	        $(`#${idHide}`).hide()
-	        $(`#${idShow}`).show()
-	        landingPageShow = false; 
+	        console.log('swipped left, show right page.')
+	        $(`#${currentPage}`).hide()
+	        $(`#${rightPage}`).show()
 	    }
 	    if (touchendX > touchstartX) {
-	        // alert(swiped + 'right!');
+	        console.log('swipped right, show left page')
+	       	$(`#${currentPage}`).hide()
+	        $(`#${leftPage}`).show()
 	    }
 	    if (touchendY < touchstartY) {
 	        // alert(swiped + 'down!');

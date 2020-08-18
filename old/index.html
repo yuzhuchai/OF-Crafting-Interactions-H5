@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crafting Interactions沉浸式体验</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" type="text/css"/> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" type='text/javascript'></script> -->
+	<!-- <script type="text/javascript" src='jqueryMobile.js'></script> -->
+	<script type="text/javascript" src='swipe.js'></script>
+	<script type="text/javascript" src='app.js'></script>
+</head>
+<body>
+
+	<header>
+		<!-- <h2>ofCourse header</h2> -->
+	</header>
+
+
+	<div class='mainContainer' id='landingPage'>
+		<div>
+			用户体验介绍<br/>
+			用户体验介绍，<br/>
+			OF主旨介绍，<br/>
+			OF主旨介绍<br/>
+
+			左滑左滑左滑。<br/>
+		</div>
+	</div> <!-- end of landing page container  -->
+
+
+
+	<div class='mainContainer' id='play'>
+			
+		<div id='questionsContainer' class='qOne'>
+			<p>你觉得下面哪一个代码能够正确画出下图的icon</p>
+			<div id='iconContainer'>
+				<div class="chat icon"></div>
+			</div>
+		</div>
+
+
+		<div id='answersContainer'>
+				<div class='answers qOne' id='answer1'>
+					<p>.chat.icon { <br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp color: #000;<br/>
+	 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp position: absolute;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp margin-left: 2px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp margin-top: 4px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp width: 15px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp height: 10px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border: solid 1px currentColor;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-radius: 2px;<br/>
+						}
+					</p>
+				</div>
+				<div class='answers qOne' id='answer2'>
+					<p>.chat.icon:before { <br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp content: '';<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp position: absolute;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp left: 3px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp top: 8px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp width: 4px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp height: 4px;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -webkit-transform: rotate(45deg);<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp transform: rotate(45deg);<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp background-color: lightgrey;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-bottom: solid 1px currentColor;<br/>
+	  					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp border-right: solid 1px currentColor;<br/>
+						}
+					</p>
+				</div> 
+				<div class='answers qOne' id='answer3 correctAnswer'>
+					<p>A与B结合</p>
+				</div>
+
+				<div class='answers qOne' id='answers4'>
+					<p>A与B哪个都可以</p>
+				</div>
+		
+		</div> <!-- end of answers container  -->
+		
+	</div>  <!-- end of play main container --> 
+
+	<div class='mainContainer' id='info'>
+		
+		<div id='correctAnswer'>
+			
+			<div class='qOne'>
+				<p>正确答案显示：比如更多的icon 例子，并介绍文婷老师这个作品，可以给个头衔，比如UX入门。</p>
+			</div>
+
+		</div><!-- end of right answers container  -->
+
+
+		<div id='wrongAnswer'>
+
+			<div class='qOne'>			
+				<p>错误答案显示： 讲解为什么是错的，哪个是正确答案</p>
+			</div>
+		
+		</div> <!-- end of wrong answers container  -->
+	</div> <!-- end of infos main container --> 
+
+</body>
+</html>
+
+
