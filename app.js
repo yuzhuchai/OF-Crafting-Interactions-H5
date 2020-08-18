@@ -1,33 +1,50 @@
 console.log('connected')
+let landingPageShow = true;
 let firstClick = null;
 let secondClick = null;
 
 let correctAnswerPick = false;
 let wrongAnswerPick = false;
+
 // bug, jquery not working on the site, but works when written in console.
 $( document ).ready(function() {
     console.log( 'ready!');
-    //mimicing hover on touchscreen 
-	    $('.answers').click(function(){
-	    	console.log('clicked')
-			$('.answers').css({'background-color':'white', 'color':'black'})
-			$(this).css({'background-color':'black', 'color':'white'})
-				
-	    	if(!firstClick){
-	    		firstClick = $(this).attr('id')	
-				
-	    	} else {
-	    		secondClick = $(this).attr('id')
-	    		// console.log(firstClick, secondClick)
-	    		compare(this)
-	    	}
-	    	// console.log(firstClick, secondClick)
-	    	
+    if(landingPageShow){
+    	swipGesture('#landingPage', '#play')
+    	landingPageShow = false
+    }
 
+    questionsGesture()
 
-		})
-    
 });
+
+function swipGesture(hidePage,showPage){
+	console.log(hidePage, showPage)
+	$(hidePage).on('swipeleft',function(){
+		console.log('swipped')
+		$(hidePage).hide()
+		$(showPage).show()
+	})
+}
+
+function questionsGesture(){
+	//mimicing hover on touchscreen 
+    $('.answers').click(function(){
+    	console.log('clicked')
+		$('.answers').css({'background-color':'white', 'color':'black'})
+		$(this).css({'background-color':'black', 'color':'white'})
+			
+    	if(!firstClick){
+    		firstClick = $(this).attr('id')	
+			
+    	} else {
+    		secondClick = $(this).attr('id')
+    		// console.log(firstClick, secondClick)
+    		compare(this)
+    	}
+    	// console.log(firstClick, secondClick)
+	}) 
+}
 
 //this funciton compares two tap, to see if the user has chosen the answer, and if the answer is correct. 
 function compare(e){
@@ -56,9 +73,10 @@ function rightAnswerPageAnimation(e){
 		$('#info').slideDown()
 		$('#wrongAnswer').hide();
 	}
-
 }
 
+
+//this functon will display animations for the wrong answers 
 function wrongAnswerPageAnimation(e){
 	if(wrongAnswerPick){
 		console.log(e)
