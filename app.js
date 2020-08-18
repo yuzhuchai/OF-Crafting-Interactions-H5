@@ -1,5 +1,5 @@
 console.log('connected')
-let landingPageShow = true;
+
 let firstClick = null;
 let secondClick = null;
 
@@ -9,24 +9,17 @@ let wrongAnswerPick = false;
 // bug, jquery not working on the site, but works when written in console.
 $( document ).ready(function() {
     console.log( 'ready!');
+    
     if(landingPageShow){
-    	swipeFunc('landingPage')
-    	// swipGesture('#landingPage', '#play')
-    	landingPageShow = false
+    	swipeFunc('landingPage','play')
+    	console.log('this is fhsdkjfsdhfs ss')
     }
 
     questionsGesture()
 
 });
 
-function swipGesture(hidePage,showPage){
-	console.log(hidePage, showPage)
-	$(hidePage).on('swipeleft',function(){
-		console.log('swipped')
-		$(hidePage).hide()
-		$(showPage).show()
-	})
-}
+
 
 function questionsGesture(){
 	//mimicing hover on touchscreen 
