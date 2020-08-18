@@ -10,7 +10,8 @@ let wrongAnswerPick = false;
 $( document ).ready(function() {
     console.log( 'ready!');
     if(landingPageShow){
-    	swipGesture('#landingPage', '#play')
+    	swipeFunc('landingPage')
+    	// swipGesture('#landingPage', '#play')
     	landingPageShow = false
     }
 
