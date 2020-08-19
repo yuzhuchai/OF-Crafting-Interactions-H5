@@ -1,6 +1,6 @@
 console.log("linked swipe")
-// let currentPageDisplay = 'homePageContainer';
-let currentPageDisplay = 'firstQuestionContainer';
+let currentPageDisplay = 'homePageContainer';
+// let currentPageDisplay = 'firstQuestionContainer';
 let leftPage = null;
 let rightPage = null;
 let touchstartX = 0;
@@ -35,10 +35,8 @@ $( document ).ready(function() {
 		if(currentPageDisplay == 'homePageContainer'){
 			handleGesure('homePageContainer','teacherPageContainer','firstQuestionContainer')
 			// console.log(currentPage,'<inside event listener')
-		} else if(currentPageDisplay == 'teacherPageContainer'){
-			handleGesure('teacherPageContainer', 'teacherPageContainer', 'failedPageContainer')
-		} else if (currentPageDisplay == 'failedPageContainer') {
-			handleGesure('failedPageContainer', 'firstQuestionContainer', 'failedPageContainer')
+		} else if(currentPageDisplay == 'teacherPageContainer' ||currentPageDisplay == 'teacherPageContainerFromQ3' || currentPageDisplay =='teacherPageContainerFromQ2'){
+			handleGesure(currentPageDisplay, 'firstQuestionContainer', currentPageDisplay)
 		} else if(currentPageDisplay == 'firstQuestionContainer'){
 			handleGesure('firstQuestionContainer','secondQuestionContainer','teacherPageContainer')
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
@@ -66,8 +64,5 @@ $( document ).ready(function() {
 	        currentPageDisplay = leftPage
 	    }
 	}
-
-
-	
 })
 

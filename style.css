@@ -1,13 +1,13 @@
-h2 {
+/*h2 {
   color: hotpink;
 }
-
+*/
 
 
 /*this is every page, changed by swipe*/
 .pageContainer {
 	/*position: relative;*/
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	display: none;
 	height: 95vh;
 	margin: auto;
@@ -15,19 +15,23 @@ h2 {
 
 
 
-/*this should be displayed at first, */
-
+/*this should be displayed at first, */ 
 /*#homePageContainer{
 	display:flex;
 }
 */
 
 /*this shhould not be displayed at first, this is for testing */
-#firstQuestionContainer{
+/*#firstQuestionContainer{
 	display:flex;
 }
+*/
 
 
+/*for debug too*/
+#successPageContainer{
+	display: flex;
+}
 
 .questionsDiv {
 	/*display: none;*/
@@ -145,17 +149,111 @@ h2 {
 
 }
 
+#textDisplay {
+	color: black;
+	text-align: center;
+}
 
+
+#batteryContainer {
+	position: absolute;
+	width: 50vw;
+	height: 50vw;
+	/*border: 1px solid black;*/
+	bottom: 10vh;
+	left: 25vw;
+
+}
+
+
+.battery-0.icon {
+  color: #000;
+  position: absolute;
+/*  margin-left: 2px;
+  margin-top: 6px;*/
+  left:4vw;
+  width: 36vw;
+  height: 21vw;
+  bottom: 10vh;
+/*  width: 13px;
+  height: 7px;*/
+  border-radius: 20px;
+  border: solid 5px currentColor;
+}
+
+.battery-0.icon:before {
+  content: '';
+  position: absolute;
+  left: 36vw;
+  top: 6vw;
+  width: 4vw;
+  height:9vw;	
+/*  width: 2px;
+  height: 3px;*/
+  border-radius: 0 10px 10px 0;
+  border-top: solid 5px currentColor;
+  border-right: solid 5px currentColor;
+  border-bottom: solid 5px currentColor;
+}
+
+.battery-0.icon:after {
+  content: '';
+  position: absolute;
+  left: 1.5vw;
+  top: 1.5vw;
+  width: 33vw;
+  height: 18vw;
+  background-color: currentColor;
+  border-radius: 10px;
+  animation: 2s batteryCharge;
+  /*animation-delay: 2s;*/
+}
+
+@keyframes batteryCharge {
+
+	from{
+		width: 0vw;
+	}
+	to{
+		width: 33vw;
+	}
+
+}
+
+
+
+
+#maxText{
+	position: absolute;
+	z-index: 100;
+	color: #f4ee19;	
+	/*border: 1px solid white;*/
+	font-size: 12vw;
+	text-align: center;
+	left: 4vw;
+	top: -6vw;
+	/*animation: wordChange;*/
+	/*animation-delay: 2s;*/
+}
+
+@keyframes wordChange {
+	form{
+		color: black;
+	}
+	to {
+		color:#f4ee19 ;
+	}
+}
 
 @media only screen and (max-width: 500px) {
   body{
   	background-color: #1818ed;
   }
 
-  h2 {
+/*  h2 {
     color: lightblue;
   }
-
+*/
 
 	
 }
