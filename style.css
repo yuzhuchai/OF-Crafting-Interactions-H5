@@ -4,24 +4,102 @@ h2 {
 
 
 
-
+/*this is every page, changed by swipe*/
 .pageContainer {
-	display:none;
+	/*position: relative;*/
+	border: 1px solid black;
+	display: none;
+	height: 95vh;
+	margin: auto;
 }
 
 
-#homePageContainer{
+
+/*this should be displayed at first, */
+
+/*#homePageContainer{
+	display:flex;
+}
+*/
+
+/*this shhould not be displayed at first, this is for testing */
+#firstQuestionContainer{
 	display:flex;
 }
 
 
 
+.questionsDiv {
+	/*display: none;*/
+}
 
+#backgroundChargeOne{
+	background-color: #e8005f;
+}
+
+#backgroundChargeTwo{
+	background-color: #00ff3c;
+}
+
+#backgroundChargeThree{
+	background-color: #f4ee19;
+}
+
+.backgroundCharge {
+	/*border: lightblue solid 1px;*/
+	height: 100vh;
+	width: 100vw;
+	right:0;
+	top: 0;
+	z-index: -1;
+	position: absolute;
+	animation-iteration-count: 1, 2; 
+	animation-delay: 0s, 3s;
+	animation-duration: 3s, 0.5s;
+	animation-name: charging, chargingExpand;
+}
+
+@keyframes charging {
+	from {
+		height: 90vh;
+		width: 0vw;
+		right: 5vw;
+		top: 5vh;
+	}
+	to {
+		height: 90vh;
+		width: 90vw;
+		right: 5vw;
+		top: 5vh;
+	}
+}
+
+
+@keyframes chargingExpand{
+	from {
+		height:90vh;
+		width: 90vw;
+		right: 5vw;
+		top: 5vh;
+	}
+	to {
+		height:100vh;
+		width: 100vw;
+		right: 0;
+		top: 0;
+	}
+
+}
 
 @media only screen and (max-width: 500px) {
+  body{
+  	background-color: #1818ed;
+  }
+
   h2 {
     color: lightblue;
   }
+
 
 	
 }

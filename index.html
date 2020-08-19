@@ -8,7 +8,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
 
-	<!-- <script type="text/javascript" src='page.js'></script> -->
+	<script type="text/javascript" src='animate.js'></script>
 	<script type="text/javascript" src='swipe.js'></script>
 	<!-- <script type="text/javascript" src='app.js'></script> -->
 </head>
@@ -53,6 +53,7 @@
 
 	<!-- this is main div for success page -->
 		<div class='pageContainer' id='successPageContainer'> 
+			<div class='backgroundCharge' id='backgroundChargeThree'></div>	
 
 			<h2>
 				挑战成功页面<br/>
@@ -77,18 +78,27 @@
 
 			<!-- this is question 1 page -->
 		<div class='pageContainer questionContainer' id='secondQuestionContainer'>
+			<div class='backgroundCharge' id='backgroundChargeOne'></div>	
+
+			<!-- this is the container for the actual questions and answers. -->
+			<div class='questionsDiv'>
 				<h2>
-				直接在同一个页面上做充电动画？</br/>
+					直接在同一个页面上做充电动画？</br/>
 					第2个挑战页面<br/>
 					左右滑动选择答案，<br/>
 					正确答案滑到滑到下一关，并且显示一个头衔，<br/>
 					错误答案滑倒老师介绍
 				</h2>
+			</div>
+
+
 		</div>
 
 
 			<!-- this is question 1 page -->
 		<div class='pageContainer questionContainer' id='thirdQuestionContainer'>
+				<div class='backgroundCharge' id='backgroundChargeTwo'></div>	
+
 				<h2>
 					第3个挑战页面<br/>
 					左右滑动选择答案，<br/>

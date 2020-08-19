@@ -1,5 +1,6 @@
 console.log("linked swipe")
 let currentPageDisplay = 'homePageContainer';
+
 let leftPage = null;
 let rightPage = null;
 let touchstartX = 0;
@@ -8,13 +9,9 @@ let touchendX = 0;
 let touchendY = 0;
 
 
-let swipeLeft = false;
-let swipeRight = false;
 
 
 $( document ).ready(function() {
-
-
 
 	let gesuredZone = document.getElementById(currentPageDisplay);
 	console.log(gesuredZone,'<-----gesureZone')
@@ -55,27 +52,22 @@ $( document ).ready(function() {
 
 
 	function handleGesure(currentPage, leftPage, rightPage){
-		console.log(currentPage,'<-----inside HandleGesure')
-		let swiped = 'swiped: ';
-		console.log("this is triggered")
 
 		if (touchendX < touchstartX) {
-			swipeLeft = true  
-	        console.log('swipped left, show right page.')
+	        // console.log('swipped left, show right page.')
 	        $(`#${currentPage}`).hide()
 	        $(`#${rightPage}`).show()
 	        currentPageDisplay = rightPage
-	        console.log(currentPage,'<--iside swip')
 	    }
 	    if (touchendX > touchstartX) {
-	    	swipeLeft = true  
-	        console.log('swipped left, show right page.')
+	        // console.log('swipped left, show right page.')
 	        $(`#${currentPage}`).hide()
 	        $(`#${leftPage}`).show()
 	        currentPageDisplay = leftPage
-	        console.log(currentPage,'<--iside swip')
 	    }
 	}
 
+
+	
 })
 
