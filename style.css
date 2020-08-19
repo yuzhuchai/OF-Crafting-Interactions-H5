@@ -296,27 +296,38 @@ img{
 	height: 94vw;
 	left: 3vw;
 	top: 7vh;
-	z-index: 10;
+	z-index: 100
 }
 
 
-#bgGrid {
+.bgGrid {
 	position: absolute;
 	width: 88vw;
 	height: 88vw;
 	/*border: 1px white solid;*/
 	left: 6vw;
 	top: 11vh;
+	z-index: -100;
+}
+
+#bgGrid2 {
+	top: 20vh;
 }
 
 
-#logo {
+.logoLeft {
 	position: absolute;
 	width: 55vw;
 	bottom: 2vh;
 	left: 3vh;
 }
 
+.logoRight{
+	position: absolute;
+	width: 55vw;
+	bottom: 2vh;
+	right: 3vh;
+}
 
 #slide {
 	position: absolute;
@@ -333,16 +344,57 @@ img{
 	z-index: 100
 }
 
-#challengeText{
+.title{
 	top: 2vh;
 	color: white;
 	position: absolute;
 	right: 2vw;
+	font-size: 5vw;
 }
 
-#challengeText > h2 {
+.title > h2 {
 	margin:0;
 }
+
+
+#went{
+	position: absolute; 
+	width: 95vw;
+	top: 14vh;
+}
+
+#wentName > h2, #wentName > h1 {
+	margin: 0;
+	color: white;
+}
+
+
+#wentName {
+	position: absolute;
+	top: 9vh;
+	left: 3vw;
+}
+
+#wentIntroOne{
+	color: white;
+	position: absolute;
+	background-color: #1818ed;
+	top: 60vh;
+	width: 60vw;
+	font-size: 4vw;
+}
+
+#wentIntroTwo{
+	color: white;	
+	position: absolute;
+	background-color: #1818ed;
+	width: 75vw;
+	top: 78vh;
+	text-align: justify;
+	font-size: 2.5vw;
+	right: 3vw;
+}
+
 
 @media only screen and (max-width: 500px) {
   body{
