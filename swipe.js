@@ -1,5 +1,5 @@
 console.log("linked swipe")
-let currentPage = 'homePageContainer';
+let currentPageDisplay = 'homePageContainer';
 let leftPage = null;
 let rightPage = null;
 let touchstartX = 0;
@@ -12,11 +12,12 @@ let swipeLeft = false;
 let swipeRight = false;
 
 
+$( document ).ready(function() {
 
 
 
-	// let gesuredZone = document.getElementById(currentPage);
-	// console.log(gesuredZone,'<-----gesureZone')
+	let gesuredZone = document.getElementById(currentPageDisplay);
+	console.log(gesuredZone,'<-----gesureZone')
 
 
 	document.addEventListener('touchstart', function(e){
@@ -32,41 +33,49 @@ let swipeRight = false;
 		touchendX = e.changedTouches[0].screenX;
 		touchendY = e.changedTouches[0].screenY;
 		// console.log(touchstartX,touchstartY,'<=====touched')
-		
+		// console.log(currentPage,'<after touch')
 
-		if(currentPage == 'homePageContainer'){
+		if(currentPageDisplay == 'homePageContainer'){
 			handleGesure('homePageContainer','teacherPageContainer','firstQuestionContainer')
-			console.log(currentPage,'<inside event listener')
-		} else if(currentPage == 'teacherPageContainer'){
+			// console.log(currentPage,'<inside event listener')
+		} else if(currentPageDisplay == 'teacherPageContainer'){
 			handleGesure('teacherPageContainer', 'teacherPageContainer', 'failedPageContainer')
+		} else if (currentPageDisplay == 'failedPageContainer') {
+			handleGesure('failedPageContainer', 'firstQuestionContainer', 'failedPageContainer')
+		} else if(currentPageDisplay == 'firstQuestionContainer'){
+			handleGesure('firstQuestionContainer','teacherPageContainer','secondQuestionContainer')
+		} else if (currentPageDisplay == 'secondQuestionContainer'){
+			handleGesure('secondQuestionContainer','teacherPageContainer','thirdQuestionContainer')
+		} else if (currentPageDisplay == 'thirdQuestionContainer'){
+			handleGesure('thirdQuestionContainer','teacherPageContainer','successPageContainer')
 		}
-
-
-
 
 	},false);
 
 
 
 	function handleGesure(currentPage, leftPage, rightPage){
+		console.log(currentPage,'<-----inside HandleGesure')
 		let swiped = 'swiped: ';
 		console.log("this is triggered")
 
 		if (touchendX < touchstartX) {
+			swipeLeft = true  
 	        console.log('swipped left, show right page.')
 	        $(`#${currentPage}`).hide()
 	        $(`#${rightPage}`).show()
-	        currentPage = rightPage
-	        console.log(currentPage,'<--iside gesture')
+	        currentPageDisplay = rightPage
+	        console.log(currentPage,'<--iside swip')
 	    }
 	    if (touchendX > touchstartX) {
-	        // alert(swiped + 'left!');
-	        console.log('swipped right, show left page')
-	       	$(`#${currentPage}`).hide()
+	    	swipeLeft = true  
+	        console.log('swipped left, show right page.')
+	        $(`#${currentPage}`).hide()
 	        $(`#${leftPage}`).show()
-	        currentPage = leftPage
+	        currentPageDisplay = leftPage
+	        console.log(currentPage,'<--iside swip')
 	    }
 	}
 
-
+})
 
