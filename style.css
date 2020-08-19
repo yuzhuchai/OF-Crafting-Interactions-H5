@@ -16,10 +16,10 @@
 
 
 /*this should be displayed at first, */ 
-/*#homePageContainer{
+#homePageContainer{
 	display:flex;
 }
-*/
+
 
 /*this shhould not be displayed at first, this is for testing */
 /*#firstQuestionContainer{
@@ -29,9 +29,9 @@
 
 
 /*for debug too*/
-#successPageContainer{
+/*#successPageContainer{
 	display: flex;
-}
+}*/
 
 .questionsDiv {
 	/*display: none;*/
@@ -56,7 +56,6 @@
 }
 
 
-
 .backgroundCharge{
 	/*border: lightblue solid 1px;*/
 	height: 100vh;
@@ -65,9 +64,9 @@
 	top: 0;
 	z-index: -1;
 	position: absolute;
-	animation-iteration-count: 1, 2; 
-	animation-delay: 0s, 2s;
-	animation-duration: 2s, 0.5s;
+	/*animation-iteration-count: 1, 1; */
+	animation-delay: 0s, 1s;
+	animation-duration: 1s, 0.5s;
 }
 
 
@@ -75,51 +74,77 @@
 
 @keyframes chargingRtoL {
 	from {
-		height: 90vh;
+		height: 85vh;
 		width: 0vw;
-		right: 5vw;
-		top: 5vh;
+		right: 7.5vw;
+		top: 7.5vh;
+		border-radius: 20px;
 	}
 	to {
-		height: 90vh;
-		width: 90vw;
-		right: 5vw;
-		top: 5vh;
+		height: 85vh;
+		width: 85vw;
+		right: 7.5vw;
+		top: 7.5vh;
+		border-radius: 20px;
+
 	}
 }
 
 
 @keyframes chargingLtoR {
 	from {
-		height: 90vh;
+		height: 85vh;
 		width: 0vw;
-		left: 5vw;
-		top: 5vh;
+		left: 7.5vw;
+		top: 7.5vh;
+		border-radius: 20px;
+
 	}
 	to {
-		height: 90vh;
-		width: 90vw;
-		left: 5vw;
-		top: 5vh;
+		height: 85vh;
+		width: 85vw;
+		left: 7.5vw;
+		top: 7.5vh;
+		border-radius: 20px;
+		
 	}
 }
 
-
 @keyframes chargingExpand{
-	from {
+	0% {
 		height:90vh;
 		width: 90vw;
 		right: 5vw;
 		top: 5vh;
+		border-radius: 20px;
 	}
-	to {
+	25% {
 		height:100vh;
 		width: 100vw;
 		right: 0;
 		top: 0;
+		border-radius: 0px;
 	}
 
+	50%{
+		height:95vh;
+		width: 95vw;
+		right: 2.5vw;
+		top: 2.5vh;
+		border-radius: 20px;
+	}
+
+	100%{
+		height:100vh;
+		width: 100vw;
+		right: 0;
+		top: 0;
+		border-radius: 0px;
+	}
 }
+
+
+
 
 
 .reverseCharge {
@@ -199,13 +224,18 @@
 .battery-0.icon:after {
   content: '';
   position: absolute;
+  /*display: none;*/
   left: 1.5vw;
   top: 1.5vw;
-  width: 33vw;
+  width: 0vw;
   height: 18vw;
   background-color: currentColor;
   border-radius: 10px;
-  animation: 2s batteryCharge;
+  /*animation-delay: 0s;*/
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-name: batteryCharge;
   /*animation-delay: 2s;*/
 }
 
@@ -220,30 +250,37 @@
 
 }
 
-
-
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 #maxText{
 	position: absolute;
 	z-index: 100;
 	color: #f4ee19;	
+	/*display: none;*/
 	/*border: 1px solid white;*/
 	font-size: 12vw;
 	text-align: center;
 	left: 4vw;
 	top: -6vw;
-	/*animation: wordChange;*/
-	/*animation-delay: 2s;*/
+	/*opacity:0;*/
+	animation-duration: 2s;
+	animation-name: appear;
 }
 
-@keyframes wordChange {
-	form{
-		color: black;
-	}
-	to {
-		color:#f4ee19 ;
-	}
-}
+
 
 @media only screen and (max-width: 500px) {
   body{
