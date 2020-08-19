@@ -1,6 +1,6 @@
 console.log("linked swipe")
-let currentPageDisplay = 'homePageContainer';
-
+// let currentPageDisplay = 'homePageContainer';
+let currentPageDisplay = 'firstQuestionContainer';
 let leftPage = null;
 let rightPage = null;
 let touchstartX = 0;
@@ -40,11 +40,11 @@ $( document ).ready(function() {
 		} else if (currentPageDisplay == 'failedPageContainer') {
 			handleGesure('failedPageContainer', 'firstQuestionContainer', 'failedPageContainer')
 		} else if(currentPageDisplay == 'firstQuestionContainer'){
-			handleGesure('firstQuestionContainer','teacherPageContainer','secondQuestionContainer')
+			handleGesure('firstQuestionContainer','secondQuestionContainer','teacherPageContainer')
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
-			handleGesure('secondQuestionContainer','teacherPageContainer','thirdQuestionContainer')
+			handleGesure('secondQuestionContainer','thirdQuestionContainer','teacherPageContainerFromQ2')
 		} else if (currentPageDisplay == 'thirdQuestionContainer'){
-			handleGesure('thirdQuestionContainer','teacherPageContainer','successPageContainer')
+			handleGesure('thirdQuestionContainer','teacherPageContainerFromQ3','successPageContainer')
 		}
 
 	},false);
@@ -54,13 +54,13 @@ $( document ).ready(function() {
 	function handleGesure(currentPage, leftPage, rightPage){
 
 		if (touchendX < touchstartX) {
-	        // console.log('swipped left, show right page.')
+	        console.log('display rightPage')
 	        $(`#${currentPage}`).hide()
 	        $(`#${rightPage}`).show()
 	        currentPageDisplay = rightPage
 	    }
 	    if (touchendX > touchstartX) {
-	        // console.log('swipped left, show right page.')
+	        console.log('display left page.')
 	        $(`#${currentPage}`).hide()
 	        $(`#${leftPage}`).show()
 	        currentPageDisplay = leftPage
