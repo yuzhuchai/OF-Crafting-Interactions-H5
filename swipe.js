@@ -9,6 +9,8 @@ let touchendX = 0;
 let touchendY = 0;
 
 
+let swipedLeft = false;
+let swipedRight = false;
 
 
 $( document ).ready(function() {
@@ -34,20 +36,51 @@ $( document ).ready(function() {
 
 		if(currentPageDisplay == 'homePageContainer'){
 			handleGesure('homePageContainer','teacherPageContainer','firstQuestionContainer')
-			// console.log(currentPage,'<inside event listener')
-		} else if(currentPageDisplay == 'teacherPageContainer' || currentPageDisplay == 'teacherPageContainerFromQ3' || currentPageDisplay =='teacherPageContainerFromQ2'){
-			$('body').css('background-color', '#1818ed');
-			console.log('this should be triggered')
-			handleGesure(currentPageDisplay, 'firstQuestionContainer', currentPageDisplay)
+			// this is displaying the page on the right, with color blue to red 
+			if(swipedLeft){
+				$('body').css({'background':'linear-gradient(270deg, #e8005f, #1818ed)'})
+				swipedLeft = false
+			}
+		} else if(currentPageDisplay == 'teacherPageContainer'){
+			// $('body').css('background-color', '#1818ed');
+			handleGesure(currentPageDisplay, currentPageDisplay,'firstQuestionContainer')
+			//yhid id displayin the page on the right, with color no change 
+			//thi is dispayign thr page on the left, with color, blue to red 
+		 	if (swipedLeft){
+				$('body').css({'background':'linear-gradient(270deg, #e8005f, #1818ed)'})
+				swipedLeft = false
+			}
 		} else if(currentPageDisplay == 'firstQuestionContainer'){
 			handleGesure('firstQuestionContainer','secondQuestionContainer','teacherPageContainer')
+			//htsi is dsiplaying the page on the rihgt 
+			if(swipedLeft){
+				$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)'})
+				swipedLeft = false
+			} else if(swipedRight){
+				$('body').css({'background':'linear-gradient(270deg, #14e236, #e8005f)'})
+				swipedRight = false
+			}
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
-			$('body').css('background-color','#e8005f');
-			handleGesure('secondQuestionContainer','thirdQuestionContainer','teacherPageContainerFromQ2')
+			// $('body').css('background-color','#e8005f');
+			handleGesure('secondQuestionContainer','thirdQuestionContainer','teacherPageContainer')
+			if(swipedLeft){
+				$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)'})
+				swipedLeft = false
+			} else if(swipedRight){
+				$('body').css({'background':'linear-gradient(270deg, #14e236, #f4ee19)'})
+				swipedRight = false
+			}
 		} else if (currentPageDisplay == 'thirdQuestionContainer'){
-			$('body').css('background-color','#14e236');
+			// $('body').css('background-color','#14e236');
 			console.log('change bg color triggered')
-			handleGesure('thirdQuestionContainer','teacherPageContainerFromQ3','successPageContainer')
+			handleGesure('thirdQuestionContainer','teacherPageContainer','successPageContainer')
+			if(swipedLeft){
+				$('body').css({'background':'linear-gradient(270deg, #f4ee19, #1818ed)'})
+				swipedLeft = false
+			} else if(swipedRight){
+				$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)'})
+				swipedRight = false
+			}
 		} else if (currentPage == 'successPageContainer'){
 			// $('body').css('background-color','yellow');
 			// console.log('body BCcolor greem')
@@ -64,12 +97,14 @@ $( document ).ready(function() {
 	        $(`#${currentPage}`).hide()
 	        $(`#${rightPage}`).show()
 	        currentPageDisplay = rightPage
+	        swipedLeft = true;
 	    }
 	    if (touchendX > touchstartX) {
 	        console.log('display left page.')
 	        $(`#${currentPage}`).hide()
 	        $(`#${leftPage}`).show()
 	        currentPageDisplay = leftPage
+	        swipedRight= true;
 	    }
 	}
 })
