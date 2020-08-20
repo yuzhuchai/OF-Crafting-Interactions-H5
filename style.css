@@ -438,10 +438,11 @@ img{
 	/*position: absolute;*/
 	font-size: 12vw;
 	font-weight: bold;
-	margin-left: 1vw;
+	margin-left: 2vw;
 	/*display: block;*/
 	/*top: 5vh;*/
 	/*left: 3vw;*/
+	text-align: left;
 }
 
 .questions{
@@ -451,6 +452,7 @@ img{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	margin-top: 5vh;
 }
 
 #icon {
@@ -526,7 +528,11 @@ img{
 }
 
 
-
+.codeBlock{
+	margin: 5vh;
+	text-align: left;
+	line-height: 1;
+}
 /*the followings are for the arrows*/
 /*.swipeRight{
 	position: absolute;

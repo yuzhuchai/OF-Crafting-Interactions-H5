@@ -19,6 +19,10 @@ let distanceA
 let growLeft;
 let growRight;
 
+let perviousTouch = 0;
+
+let touches;
+
 $( document ).ready(function() {
 
 	let gesuredZone = document.getElementById(currentPageDisplay);
@@ -29,6 +33,7 @@ $( document ).ready(function() {
 	document.addEventListener('touchstart', function(e){
 
 		touchstartX = e.changedTouches[0].screenX;
+		perviousTouch = touchstartX;
 		// console.log(touchstartX,touchstartY,'<======touchstart')
 
 	}, false)
@@ -53,6 +58,8 @@ $( document ).ready(function() {
 			handleGesure(currentPageDisplay, currentPageDisplay,'firstQuestionContainer')
 			//yhid id displayin the page on the right, with color no change 
 			//thi is dispayign thr page on the left, with color, blue to red 
+        	// $('.arrow-left.icon').css({'width':'10vw'})
+        	// $('.arrow-right.icon').css({'width':'10vw'})
 		 	if (swipedLeft){
 				$('body').css({'background':'linear-gradient(270deg, #e8005f, #1818ed)','background-size':'400% 400%'})
 				swipedLeft = false
@@ -60,7 +67,8 @@ $( document ).ready(function() {
 		} else if(currentPageDisplay == 'firstQuestionContainer'){
 			handleGesure('firstQuestionContainer','secondQuestionContainer','teacherPageContainer')
 			//htsi is dsiplaying the page on the rihgt 
-
+        	// $('.arrow-left.icon').css({'width':'10vw'})
+        	// $('.arrow-right.icon').css({'width':'10vw'})
 	
 			if(swipedLeft){
 				$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)','background-size':'400% 400%'})
@@ -68,12 +76,15 @@ $( document ).ready(function() {
 				swipedLeft = false
 			} else if(swipedRight){
 				$('body').css({'background':'linear-gradient(270deg, #14e236, #e8005f)','background-size':'400% 400%'})
+	        	// $('.arrow-left.icon').css({'width':'10vw'})
+        		// $('.arrow-right.icon').css({'width':'10vw'})
 				// $('.arrow-right.icon').css({'color': 'black'})
 				swipedRight = false
 			}
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
 			// $('body').css('background-color','#e8005f');
-
+			// $('.arrow-left.icon').css({'width':'10vw'})
+   //      	$('.arrow-right.icon').css({'width':'10vw'})
 			handleGesure('secondQuestionContainer','thirdQuestionContainer','teacherPageContainer')
 			if(swipedLeft){
 				$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)','background-size':'400% 400%'})
@@ -104,32 +115,51 @@ $( document ).ready(function() {
 
 	function arrowGrowing(){
 
-		console.log('')
 		document.addEventListener('touchmove', handleMove, false)
 
 		function handleMove(e){
-			// e.preventDefault()
-			// let el = doucument.getElementbyId()
-			let touches = e.changedTouches[0].screenX;
-			touchesArray.push(touches)
-			// console.log(touchesArray)
-			distanceA = touchesArray.map((num, i) => {
-					return Math.abs(touchesArray[i+1] - num) * 100/ width 
-					// return (touchesArray[i+1] - num) * 100/ width 
-			})
-			// console.log(distanceA)
-			let changedDistance = distanceA[distanceA.length -2]
-			// console.log(changedDistance)
+
+			 touches = e.changedTouches[0].screenX;
+			
+			// touchesArray.push(touches)
+			// distanceA = touchesArray.map((num, i) => {
+			// 		return Math.abs(touchesArray[i+1] - num) * 100/ width 
+			// })
+			distanceMoved = Math.abs(touches - perviousTouch) * 1000/width 
+
+
+			// let changedDistance = distanceA[distanceA.length -2]
 			if(growLeft){
-				console.log(changedDistance)
-				$('.arrow-left.icon').animate({'width':`+=${changedDistance}`})
-				// $('.arrow-left.icon:before').animate
+				// console.log(changedDistance)
+				$('.arrow-left.icon').animate({'width':`+=${distanceMoved}`}, function(){
+					console.log(growLeft, growRight)
+				})
+				$('.answerTwo').animate({'margin-right': `+=${distanceMoved}`}, function(){
+					console.log(growLeft, growRight)
+					// growLeft = false
+				})
 				growLeft = false
+				growRight = false
+
 			} else if (growRight){
-				console.log(changedDistance)
-				$('.arrow-right.icon').css({'width': `+=${changedDistance}`})
+				// console.log(changedDistance)
+				$('.arrow-right.icon').animate({'width': `+=${distanceMoved}`}, function(){
+					console.log(growLeft, growRight)
+					// growRight = false
+
+				})
+				$('.answerOne').animate({'margin-left': `+=${distanceMoved}`}, function(){
+					console.log(growLeft, growRight)
+					// growRight = false
+
+				})
+					console.log(growLeft, growRight)
+				
+				growRight = false
 				growRight = false
 			}
+			perviousTouch = touches
+			console.log(perviousTouch)
 		}
 
 	}
@@ -163,8 +193,8 @@ $( document ).ready(function() {
 	        	currentPageDisplay = leftPage
 	        	// console.log(distance, width)
 	        	swipedRight= true;
-	        	$('.arrow-left.icon').css({'width':'10vw'})
-	        	$('.arrow-right.icon').css({'width':'10vw'})
+				$('.arrow-left.icon').css({'width':'10vw'})
+        		$('.arrow-right.icon').css({'width':'10vw'})
 	    	}
 	    }
 
