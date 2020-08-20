@@ -51,11 +51,8 @@ $( document ).ready(function() {
 			}
 			switchPage = false 
 		} else if(currentPageDisplay == 'teacherPageContainer'){
-			
 			handleGesure(currentPageDisplay, currentPageDisplay,'firstQuestionContainer')
-
 		 	if (swipedLeft){
-		 		
 				$('body').css({'background':'linear-gradient(270deg, #e8005f, #1818ed)','background-size':'400% 400%'})
 				swipedLeft = false
 			}
@@ -78,7 +75,6 @@ $( document ).ready(function() {
 				switchPage = false 
 			} else {
 				handleTurnDiv()
-
 			}
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
 			// arrowGrowing()
@@ -114,10 +110,8 @@ $( document ).ready(function() {
 				switchPage = false 
 			} else {
 				handleTurnDiv()
-			}
-			
+			}	
 		} 
-
 	},false);
 
 
@@ -208,8 +202,6 @@ $( document ).ready(function() {
 	        	swipedLeft = true;
 	        	$('.arrow-left.icon').css({'width':'80vw'})
 	        	$('.arrow-right.icon').css({'width':'80vw'})
-	        	$('.answerOne').css({'margin-left':'0'})
-	        	$('.answerTwo').css({'margin-right':'0'})
 	        }
 	    }
 	    if (touchendX > touchstartX) {
@@ -222,11 +214,8 @@ $( document ).ready(function() {
 	        	swipedRight= true;
 				$('.arrow-left.icon').css({'width':'80vw'})
         		$('.arrow-right.icon').css({'width':'80vw'})
-        		$('.answerOne').css({'margin-left':'0'})
-	        	$('.answerTwo').css({'margin-right':'0'})
 	    	}
 	    }
-
 	}
 
 	function handleTurnDiv(){
@@ -237,8 +226,6 @@ $( document ).ready(function() {
 	        	$(`.explain`).css({'display':'flex'})
 	        	$('.arrow-left.icon').css({'width':'80vw'})
 	        	$('.arrow-right.icon').css({'width':'80vw'})
-        		$('.answerOne').css({'margin-left':'0'})
-	        	$('.answerTwo').css({'margin-right':'0'})
 	        }
 	    }
 	    if (touchendX > touchstartX) {
@@ -247,8 +234,6 @@ $( document ).ready(function() {
 	        	$(`.explain`).css({'display':'flex'})
 	        	$('.arrow-left.icon').css({'width':'80vw'})
         		$('.arrow-right.icon').css({'width':'80vw'})
-        		$('.answerOne').css({'margin-left':'0'})
-	        	$('.answerTwo').css({'margin-right':'0'})
 	    	}
 	    }
 		switchPage = true;

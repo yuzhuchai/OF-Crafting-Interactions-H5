@@ -20,9 +20,9 @@ body{
 
 	background-size: 400% 400%;
 
-	-webkit-animation: changeBg 3s ease infinite;
-    -moz-animation: changeBg 3s ease infinite;
-    animation: changeBg 3s ease infinite;
+	-webkit-animation: changeBg 6s ease infinite;
+    -moz-animation: changeBg 6s ease infinite;
+    animation: changeBg 6s ease infinite;
     max-width: 100vw;
     /*font-family:'Verdana', Geneva, sans-serif;*/
 }
@@ -539,7 +539,7 @@ img{
 	line-height: 1;
 	font-size: 3.5vw;
 	width: 80vw;
-	text-align: center;
+	text-align: left;
 }
 
 /*the followings are for the arrows*/
@@ -576,7 +576,9 @@ img{
 }*/
 
 .explainTitle{
-	font-size: 5vw;
+	font-size: 6.5vw;
+	font-style: italic;
+	font-weight: bold;
 }
 
 
@@ -634,7 +636,7 @@ img{
 }
 
 #smaller-font{
-	font-size: 3vw;
+	font-size: 3.5vw;
 }
 
 #lineIcon{
@@ -653,6 +655,12 @@ img{
 	bottom: 8vh;
 	width: 30vw;
 }
+
+
+#secondAnswerDiv, #thirdAnswersDiv{
+	margin-top: 10vh;
+}
+
 
 
 @media only screen and (max-width: 500px) {
