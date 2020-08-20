@@ -1,3 +1,6 @@
+
+
+
 h2, h1, p{
 	margin: 0;
 }
@@ -12,6 +15,7 @@ body{
     -moz-animation: changeBg 3s ease infinite;
     animation: changeBg 3s ease infinite;
     max-width: 100vw;
+    font-family:'Verdana', Geneva, sans-serif;
 }
 
 
@@ -387,9 +391,10 @@ img{
 }
 
 #wentIntroOne{
+	left: 3vw;
 	color: white;
 	position: absolute;
-	background-color: #1818ed;
+	/*background-color: #1818ed;*/
 	top: 60vh;
 	width: 60vw;
 	font-size: 4vw;
@@ -398,7 +403,7 @@ img{
 #wentIntroTwo{
 	color: white;	
 	position: absolute;
-	background-color: #1818ed;
+	/*background-color: #1818ed;*/
 	width: 75vw;
 	top: 78vh;
 	text-align: justify;
@@ -597,6 +602,8 @@ img{
 	/*position: absolute;*/
 	/*top: 30vh;*/
 	/*left: ;*/
+	color: black;
+	font-size: bold;
 	width: 40vw;
 }
 
@@ -618,6 +625,13 @@ img{
 #lineIcon{
 	width: 15vh;
 }
+
+
+.chinese{
+	font-family:;  
+}
+
+
 
 @media only screen and (max-width: 500px) {
   body{
