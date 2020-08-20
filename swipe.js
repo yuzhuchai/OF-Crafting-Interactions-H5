@@ -208,7 +208,7 @@ $( document ).ready(function() {
 		if (touchendX < touchstartX) {
 	        console.log('display rightPage')
 	        growLeft = true 
-	        if((touchstartX - touchendX) > 250){
+	        if((touchstartX - touchendX) > 200){
 	        	console.log('trigger now')
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
@@ -219,7 +219,7 @@ $( document ).ready(function() {
 	    }
 	    if (touchendX > touchstartX) {
 	    	growRight = true;
-	    	if((touchendX - touchstartX) > 250){
+	    	if((touchendX - touchstartX) > 200){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
 	        	swipedRight= true;
