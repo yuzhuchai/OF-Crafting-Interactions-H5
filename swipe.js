@@ -43,14 +43,13 @@ $( document ).ready(function() {
 	document.addEventListener('touchend', function(e){
 
 		touchendX = e.changedTouches[0].screenX;
-
-
 		if(currentPageDisplay == 'homePageContainer'){
 			handleGesure('homePageContainer','teacherPageContainer','firstQuestionContainer')
 			if(swipedLeft){
 				$('body').css({'background':'linear-gradient(270deg, #e8005f, #1818ed)','background-size':'400% 400%'})
 				swipedLeft = false
 			}
+			switchPage = false 
 		} else if(currentPageDisplay == 'teacherPageContainer'){
 			
 			handleGesure(currentPageDisplay, currentPageDisplay,'firstQuestionContainer')
@@ -60,6 +59,8 @@ $( document ).ready(function() {
 				$('body').css({'background':'linear-gradient(270deg, #e8005f, #1818ed)','background-size':'400% 400%'})
 				swipedLeft = false
 			}
+
+			switchPage = false 
 		} else if(currentPageDisplay == 'firstQuestionContainer' ){
 			// console.log(switchPage,'<====switch page')
 			if(switchPage){
@@ -114,7 +115,6 @@ $( document ).ready(function() {
 				handleTurnDiv()
 			}
 			
-
 		} 
 
 	},false);

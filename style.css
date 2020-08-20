@@ -404,7 +404,7 @@ img{
 	color: white;
 	position: absolute;
 	/*background-color: #1818ed;*/
-	top: 60vh;
+	bottom: 12vh;
 	width: 60vw;
 	font-size: 4vw;
 }
