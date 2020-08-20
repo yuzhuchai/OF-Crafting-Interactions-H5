@@ -159,46 +159,46 @@ $( document ).ready(function() {
 					// growRight = false
 
 				})
-					console.log(growLeft, growRight)
 
 				growRight = false
 				growRight = false
 			}
 			perviousTouch = touches
-			console.log(perviousTouch)
 		}
 
 	}
 
-	arrowGrowing()
+
 
 	function handleGesure(currentPage, leftPage, rightPage){
 
 		if (touchendX < touchstartX) {
-	        console.log('display rightPage')
 	        growLeft = true 
-	        if((touchstartX - touchendX) > 250){
+	        if((touchstartX - touchendX) > 100){
 	        	distance = touchstartX - touchendX
-	        	console.log('trigger now')
 	        	$(`#${currentPage}`).hide()
 	        	$(`#${rightPage}`).show()
 	        	currentPageDisplay = rightPage
 	        	swipedLeft = true;
 	        	$('.arrow-left.icon').css({'width':'10vw'})
 	        	$('.arrow-right.icon').css({'width':'10vw'})
+	        	$('.answerOne').css({'margin-left':'0'})
+	        	$('.answerTwo').css({'margin-right':'0'})
+
 	        }
 	    }
 	    if (touchendX > touchstartX) {
 	    	growRight = true;
-	    	if((touchendX - touchstartX) > 250){
+	    	if((touchendX - touchstartX) > 100){
 	    		distance = touchendX - touchstartX
-	    		console.log('display left page.')
 	        	$(`#${currentPage}`).hide()
 	        	$(`#${leftPage}`).show()
 	        	currentPageDisplay = leftPage
 	        	swipedRight= true;
 				$('.arrow-left.icon').css({'width':'10vw'})
         		$('.arrow-right.icon').css({'width':'10vw'})
+        		$('.answerOne').css({'margin-left':'0'})
+	        	$('.answerTwo').css({'margin-right':'0'})
 	    	}
 	    }
 
@@ -208,18 +208,18 @@ $( document ).ready(function() {
 		if (touchendX < touchstartX) {
 	        console.log('display rightPage')
 	        growLeft = true 
-	        if((touchstartX - touchendX) > 200){
-	        	console.log('trigger now')
+	        if((touchstartX - touchendX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
 	        	swipedLeft = true;
+	        	console.log('hello')
 	        	$('.arrow-left.icon').css({'width':'10vw'})
 	        	$('.arrow-right.icon').css({'width':'10vw'})
 	        }
 	    }
 	    if (touchendX > touchstartX) {
 	    	growRight = true;
-	    	if((touchendX - touchstartX) > 200){
+	    	if((touchendX - touchstartX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
 	        	swipedRight= true;
@@ -228,7 +228,6 @@ $( document ).ready(function() {
 	    	}
 	    }
 		switchPage = true;
-	    console.log(switchPage,'<----inside handleturendiv ss')
 	}
 
 })
