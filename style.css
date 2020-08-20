@@ -201,34 +201,26 @@ body{
 
 
 
-#textDisplay {
-	color: black;
-	text-align: center;
-}
-
 
 #batteryContainer {
-	position: absolute;
+	/*position: absolute;*/
 	width: 50vw;
 	height: 50vw;
 	/*border: 1px solid black;*/
-	bottom: 10vh;
-	left: 25vw;
-
+	margin-bottom: 15vh;
+	margin-left: 25vw;
 }
 
 
 .battery-0.icon {
   color: #000;
   position: absolute;
-/*  margin-left: 2px;
-  margin-top: 6px;*/
-  left:4vw;
+
+  left:29vw;
   width: 36vw;
   height: 21vw;
-  bottom: 10vh;
-/*  width: 13px;
-  height: 7px;*/
+  bottom: 12vh;
+
   border-radius: 20px;
   border: solid 5px currentColor;
 }
@@ -240,8 +232,6 @@ body{
   top: 6vw;
   width: 4vw;
   height:9vw;	
-/*  width: 2px;
-  height: 3px;*/
   border-radius: 0 10px 10px 0;
   border-top: solid 5px currentColor;
   border-right: solid 5px currentColor;
@@ -251,19 +241,16 @@ body{
 .battery-0.icon:after {
   content: '';
   position: absolute;
-  /*display: none;*/
   left: 1.5vw;
   top: 1.5vw;
   width: 0vw;
   height: 18vw;
   background-color: currentColor;
   border-radius: 10px;
-  /*animation-delay: 0s;*/
   animation-delay: 2s;
   animation-iteration-count: infinite;
   animation-duration: 3s;
   animation-name: batteryCharge;
-  /*animation-delay: 2s;*/
 }
 
 @keyframes batteryCharge {
@@ -475,6 +462,7 @@ img{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+
 }
 
 
@@ -532,6 +520,7 @@ img{
 	margin: 5vh;
 	text-align: left;
 	line-height: 1;
+	font-size: 3.5vw;
 }
 /*the followings are for the arrows*/
 /*.swipeRight{
@@ -565,6 +554,69 @@ img{
   	-webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }*/
+
+.explainTitle{
+	font-size: 5vw;
+}
+
+
+.explain {
+	display: none;
+	font-size: 4vw;
+	width: 100%;
+	height: 60vh;
+	margin-top: 8vh;
+	/*display: flex;*/
+	/*border: white solid 1px;*/
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+}
+
+
+.explainArrow {
+	margin-top: 7vh !important;
+}
+
+
+#textDisplay {
+	margin-top: 10vh;
+	/*position: absolute;*/
+	display: block;
+	/*width: 100vw;*/
+	color: black;
+	/*top:10vh;*/
+	text-align: center;
+}
+
+
+#qrCodeImg {
+	margin-top: 5vh;
+	margin-left: 30vw;
+	/*position: absolute;*/
+	/*top: 30vh;*/
+	/*left: ;*/
+	width: 40vw;
+}
+
+
+#successText{
+	font-size: 18vw;
+}
+
+
+.margin-5 {
+	margin-left:5vw;
+	margin-right: 5vw;
+}
+
+#smaller-font{
+	font-size: 3vw;
+}
+
+#lineIcon{
+	width: 15vh;
+}
 
 @media only screen and (max-width: 500px) {
   body{

@@ -24,13 +24,6 @@
 			<div id='text'><img src="./src/text.svg"></div>
 			<div id='slide'><img src="./src/slide.svg"></div>
 			<div class='logoLeft'><img src="./src/logo.svg"></div>
-
-<!-- 			<h2><br/>
-				homepage介绍介绍介绍介<br/>
-				<br/>
-				右滑(显示左边页面)直接老师介绍,不要闯关<br/>
-				左滑(显示右边页面)是开始做题， 要闯关<br/>
-			</h2> -->
 		</div>
 
 
@@ -50,31 +43,6 @@
 		</div>
 
 
-<!-- put them back to one.  -->
-
-<!-- this is displayed when they get the seocnd quesiton wronf  -->
-<!-- 		<div class='pageContainer' id='teacherPageContainerFromQ2'>
-			<div class='reverseCharge' id='backgroundChargeOneReverse'></div>	
-			<h2>
-				老师介绍老师介绍老师介绍<br/>
-				只有左滑（重重挑战）<br/>
-\			</h2>
-		</div> -->
-
-<!-- this is displayed when they get the third question wtong  -->
-<!-- 		<div class='pageContainer' id='teacherPageContainerFromQ3'>
-			<div class='reverseCharge' id='backgroundChargeTwoReverse'></div>	
-			<h2>
-				老师介绍老师介绍老师介绍<br/>
-				只有从左往右滑（重重挑战）<br/>
-			</h2>
-		</div> -->
-
-
-
-
-
-
 		<!-- this is question 1 page -->
 		<div class='pageContainer questionContainer' id='firstQuestionContainer'>
 			<div id='challengeText' class='title'><h2>UED-初探山门</h2></div>
@@ -88,16 +56,31 @@
 				<div class='answers'>
 
 					<div class='answerOne'>
-						<p><spam>Eat your own dog food,<br/>吃你自己的狗粮。</spam></p>
+						<p>Use your own product,<br/>使用自己设计开发出来的产品。</p>
+
 						<div class="arrow-right icon"></div>
 					</div>
 
 					<div class='answerTwo'>
-						<p>Use your own product,<br/>使用自己设计开发出来的产品。</p>
+						<p>Eat your own dog food,<br/>吃你自己的狗粮。</p>
+
 						<div class="arrow-left icon"></div>
 					</div>
-				</div>		
+				</div>	
+
+
+		<!-- this is going to switch with answers -->
+				<div class='explain'>
+					<div class='explainTitle'><p>谜题揭晓：</p></div>
+					<div class="arrow-right icon explainArrow"></div>
+					<div><p>哈哈，这句话其实是一个幽默的比喻：<br/>就好比你的宠物狗是你的用户<br/>你给宠物狗喂的狗粮就是你设计的产品<br/>狗粮到底好不好吃<br/>你只有自己吃一下才知道<br/>不是吗？使用自己设计开发出来的产品<br/>作为一种用户测试的补充手段。</p></div>
+
+				</div>	
+
 			</div>
+
+
+
 		</div>
 
 
@@ -124,6 +107,17 @@
 						<div class="arrow-left icon"></div>
 					</div>					
 				</div>
+
+		<!-- this is going to switch with answers -->
+				<div class='explain'>
+					<div class='explainTitle'><p>谜题揭晓：</p></div>
+					<div class="arrow-right icon explainArrow"></div>
+					<div><p class='margin-5' id='smaller-font'>看似不经意的两句话，其实有大不同！<br/>要记住在社交情景里，所有人都有讨好别人的潜意识。<br/>“你为什么这么觉得”，会带有一点点的倾向性，<br/>似乎用户不应该这么想。<br/>这时候用户可能会在自己身上找原因，而不是客观原因。<br/>“你这么觉得是因为……”的优势就在于那个省略号，<br/>你的话故意没说完，让对方补充，<br/>对方很容易顺着你的话说出自己的真实想法。</p></div>
+
+				</div>	
+
+
+
 			</div>
 
 		</div>
@@ -174,6 +168,14 @@
 
 						</div>
 					</div>
+
+
+					<div class='explain'>
+						<div class='explainTitle'><p>谜题揭晓：</p></div>
+						<div class="arrow-left icon explainArrow"></div>
+						<div><img id='lineIcon' src="./src/lineIcon.svg"><p>这两个CSS字段<br/>绘制结果为上图两图所示<br/>请仔细区分两段代码的不同之处</p></div>
+					</div>	
+
 				</div>
 
 
@@ -189,11 +191,17 @@
 			<div class='backgroundCharge' id='backgroundChargeThree'></div>	
 
 			<div id='textDisplay'>
-				<h2>
-					挑战成功页面<br/>
-					链接到课程页面
-					挑战成功优惠，截图给客服。
+				<h2> 
+					<spam id='successText'>挑战成功</spam>
+						<br/>
+					
+					挑战成功优惠<br/>
+					截图给客服
 				</h2>
+			</div>
+
+			<div id='qrCodeImg'>
+				<img src="./src/qrCode.svg">
 			</div>
 
 
@@ -201,7 +209,7 @@
 				<div class="battery-0 icon"><h1 id='maxText'>MAX</h1></div>
 
 			</div>
-			<div class='logoRight'><img src="./src/logo.svg"></div>
+			<div class='logoRight'><img src="./src/logoBlack.svg"></div>
 
 		</div>
 
