@@ -63,6 +63,8 @@ $( document ).ready(function() {
 		} else if(currentPageDisplay == 'firstQuestionContainer' ){
 			console.log(switchPage,'<====switch page')
 			if(switchPage){
+				// arrowGrowing()
+
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
 				handleGesure('firstQuestionContainer','secondQuestionContainer','teacherPageContainer')
@@ -81,6 +83,8 @@ $( document ).ready(function() {
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
 
 			if(switchPage){
+				// arrowGrowing()
+
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
 				handleGesure('secondQuestionContainer','thirdQuestionContainer','teacherPageContainer')
@@ -88,7 +92,7 @@ $( document ).ready(function() {
 					$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)','background-size':'400% 400%'})
 					swipedLeft = false
 				} else if(swipedRight){
-					$('body').css({'background':'linear-gradient(270deg, #14e236, #f4ee19)','background-size':'400% 400%'})
+					$('body').css({'background':'linear-gradient(270deg, #14e236, #9650e6)','background-size':'400% 400%'})
 					swipedRight = false
 				}
 				switchPage = false 
@@ -99,11 +103,13 @@ $( document ).ready(function() {
 		} else if (currentPageDisplay == 'thirdQuestionContainer'){
 
 			if(switchPage){
+				// arrowGrowing()
+
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
 				handleGesure('thirdQuestionContainer','teacherPageContainer','successPageContainer')
 				if(swipedLeft){
-					$('body').css({'background':'linear-gradient(270deg, #1818ed, #f4ee19)','background-size':'400% 400%'})
+					$('body').css({'background':'linear-gradient(270deg, #1818ed, #9650e6)','background-size':'400% 400%'})
 					swipedLeft = false
 				} else if(swipedRight){
 					$('body').css({'background':'linear-gradient(270deg, #1818ed, #12002b)','background-size':'400% 400%'})
@@ -168,7 +174,7 @@ $( document ).ready(function() {
 
 	}
 
-
+	// arrowGrowing()
 
 	function handleGesure(currentPage, leftPage, rightPage){
 
@@ -180,8 +186,8 @@ $( document ).ready(function() {
 	        	$(`#${rightPage}`).show()
 	        	currentPageDisplay = rightPage
 	        	swipedLeft = true;
-	        	$('.arrow-left.icon').css({'width':'10vw'})
-	        	$('.arrow-right.icon').css({'width':'10vw'})
+	        	$('.arrow-left.icon').css({'width':'80vw'})
+	        	$('.arrow-right.icon').css({'width':'80vw'})
 	        	$('.answerOne').css({'margin-left':'0'})
 	        	$('.answerTwo').css({'margin-right':'0'})
 
@@ -195,8 +201,8 @@ $( document ).ready(function() {
 	        	$(`#${leftPage}`).show()
 	        	currentPageDisplay = leftPage
 	        	swipedRight= true;
-				$('.arrow-left.icon').css({'width':'10vw'})
-        		$('.arrow-right.icon').css({'width':'10vw'})
+				$('.arrow-left.icon').css({'width':'80vw'})
+        		$('.arrow-right.icon').css({'width':'80vw'})
         		$('.answerOne').css({'margin-left':'0'})
 	        	$('.answerTwo').css({'margin-right':'0'})
 	    	}
@@ -206,25 +212,25 @@ $( document ).ready(function() {
 
 	function handleTurnDiv(){
 		if (touchendX < touchstartX) {
-	        console.log('display rightPage')
-	        growLeft = true 
+	        // console.log('display rightPage')
+	        // growLeft = true 
 	        if((touchstartX - touchendX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
 	        	swipedLeft = true;
 	        	console.log('hello')
-	        	$('.arrow-left.icon').css({'width':'10vw'})
-	        	$('.arrow-right.icon').css({'width':'10vw'})
+	        	$('.arrow-left.icon').css({'width':'80vw'})
+	        	$('.arrow-right.icon').css({'width':'80vw'})
 	        }
 	    }
 	    if (touchendX > touchstartX) {
-	    	growRight = true;
+	    	// growRight = true;
 	    	if((touchendX - touchstartX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
 	        	swipedRight= true;
-	        	$('.arrow-left.icon').css({'width':'10vw'})
-        		$('.arrow-right.icon').css({'width':'10vw'})
+	        	$('.arrow-left.icon').css({'width':'80vw'})
+        		$('.arrow-right.icon').css({'width':'80vw'})
 	    	}
 	    }
 		switchPage = true;

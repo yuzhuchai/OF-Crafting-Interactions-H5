@@ -485,13 +485,15 @@ img{
 .arrow-right.icon {
   	color: white;
   	position: absolute;
-  	left: 45vw;
+  	left: 0vw;
  	margin-top: 3vh;
- 	 /*this width change with drag*/
-  	width: 10vw;
+  	width: 80vw;
   	height: 3px;
   	background-color: currentColor;
 }
+
+
+
 
 .arrow-right.icon:before {
   	content: '';
@@ -511,7 +513,7 @@ img{
   position: absolute;
   /*margin-left: 3px;*/
   margin-top: 3vh;
-  right: 45vw;
+  right: 0vw;
   width: 10vw;
   height: 3px;
   background-color: currentColor;
@@ -644,6 +646,13 @@ img{
 	font-family:;  
 }
 
+
+#reDo{
+	position: absolute;
+	right: 0;
+	bottom: 8vh;
+	width: 30vw;
+}
 
 
 @media only screen and (max-width: 500px) {
