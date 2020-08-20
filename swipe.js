@@ -61,10 +61,8 @@ $( document ).ready(function() {
 				swipedLeft = false
 			}
 		} else if(currentPageDisplay == 'firstQuestionContainer' ){
-			console.log(switchPage,'<====switch page')
+			// console.log(switchPage,'<====switch page')
 			if(switchPage){
-				// arrowGrowing()
-
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
 				handleGesure('firstQuestionContainer','secondQuestionContainer','teacherPageContainer')
@@ -83,8 +81,6 @@ $( document ).ready(function() {
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
 
 			if(switchPage){
-				// arrowGrowing()
-
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
 				handleGesure('secondQuestionContainer','thirdQuestionContainer','teacherPageContainer')
@@ -103,8 +99,6 @@ $( document ).ready(function() {
 		} else if (currentPageDisplay == 'thirdQuestionContainer'){
 
 			if(switchPage){
-				// arrowGrowing()
-
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
 				handleGesure('thirdQuestionContainer','teacherPageContainer','successPageContainer')
@@ -132,7 +126,7 @@ $( document ).ready(function() {
 
 		function handleMove(e){
 
-			 touches = e.changedTouches[0].screenX;
+			touches = e.changedTouches[0].screenX;
 			
 			// touchesArray.push(touches)
 			// distanceA = touchesArray.map((num, i) => {
@@ -145,10 +139,10 @@ $( document ).ready(function() {
 			if(growLeft){
 				// console.log(changedDistance)
 				$('.arrow-left.icon').animate({'width':`+=${distanceMoved}`}, function(){
-					console.log(growLeft, growRight)
+					// console.log(growLeft, growRight)
 				})
 				$('.answerTwo').animate({'margin-right': `+=${distanceMoved}`}, function(){
-					console.log(growLeft, growRight)
+					// console.log(growLeft, growRight)
 					// growLeft = false
 				})
 				growLeft = false
@@ -157,11 +151,11 @@ $( document ).ready(function() {
 			} else if (growRight){
 				// console.log(changedDistance)
 				$('.arrow-right.icon').animate({'width': `+=${distanceMoved}`}, function(){
-					console.log(growLeft, growRight)
+					// console.log(growLeft, growRight)
 
 				})
 				$('.answerOne').animate({'margin-left': `+=${distanceMoved}`}, function(){
-					console.log(growLeft, growRight)
+					// console.log(growLeft, growRight)
 					// growRight = false
 
 				})
@@ -212,25 +206,23 @@ $( document ).ready(function() {
 
 	function handleTurnDiv(){
 		if (touchendX < touchstartX) {
-	        // console.log('display rightPage')
-	        // growLeft = true 
 	        if((touchstartX - touchendX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
-	        	swipedLeft = true;
-	        	console.log('hello')
 	        	$('.arrow-left.icon').css({'width':'80vw'})
 	        	$('.arrow-right.icon').css({'width':'80vw'})
+        		$('.answerOne').css({'margin-left':'0'})
+	        	$('.answerTwo').css({'margin-right':'0'})
 	        }
 	    }
 	    if (touchendX > touchstartX) {
-	    	// growRight = true;
 	    	if((touchendX - touchstartX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
-	        	swipedRight= true;
 	        	$('.arrow-left.icon').css({'width':'80vw'})
         		$('.arrow-right.icon').css({'width':'80vw'})
+        		$('.answerOne').css({'margin-left':'0'})
+	        	$('.answerTwo').css({'margin-right':'0'})
 	    	}
 	    }
 		switchPage = true;
