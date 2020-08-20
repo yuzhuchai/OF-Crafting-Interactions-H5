@@ -63,6 +63,7 @@ $( document ).ready(function() {
 			switchPage = false 
 		} else if(currentPageDisplay == 'firstQuestionContainer' ){
 			// console.log(switchPage,'<====switch page')
+			// arrowGrowing()
 			if(switchPage){
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
@@ -80,7 +81,7 @@ $( document ).ready(function() {
 
 			}
 		} else if (currentPageDisplay == 'secondQuestionContainer'){
-
+			// arrowGrowing()
 			if(switchPage){
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
@@ -98,7 +99,7 @@ $( document ).ready(function() {
 			}
 
 		} else if (currentPageDisplay == 'thirdQuestionContainer'){
-
+			// arrowGrowing()
 			if(switchPage){
 				$(`.answers`).css({'display':'flex'})
 	        	$(`.explain`).hide()
@@ -120,60 +121,85 @@ $( document ).ready(function() {
 	},false);
 
 
-	function arrowGrowing(){
+	// function arrowGrowing(){
 
-		document.addEventListener('touchmove', handleMove, false)
+	// 	document.addEventListener('touchmove', handleMove, false)
 
-		function handleMove(e){
+	// 	function handleMove(e){
 
-			touches = e.changedTouches[0].screenX;
+
+
+	// 		touches = e.changedTouches[0].screenX;
 			
-			// touchesArray.push(touches)
-			// distanceA = touchesArray.map((num, i) => {
-			// 		return Math.abs(touchesArray[i+1] - num) * 100/ width 
-			// })
-			distanceMoved = Math.abs(touches - perviousTouch) * 1000/width 
+	// 		// touchesArray.push(touches)
+	// 		// distanceA = touchesArray.map((num, i) => {
+	// 		// 		return Math.abs(touchesArray[i+1] - num) * 100/ width 
+	// 		// })
+	// 		distanceMoved = Math.abs(touches - perviousTouch) * 1000/width 
 
 
-			// let changedDistance = distanceA[distanceA.length -2]
-			if(growLeft){
-				// console.log(changedDistance)
-				$('.arrow-left.icon').animate({'width':`+=${distanceMoved}`}, function(){
-					// console.log(growLeft, growRight)
-				})
-				$('.answerTwo').animate({'margin-right': `+=${distanceMoved}`}, function(){
-					// console.log(growLeft, growRight)
-					// growLeft = false
-				})
-				growLeft = false
-				growRight = false
+	// 		// let changedDistance = distanceA[distanceA.length -2]
+	// 		if(growLeft){
+	// 			// console.log(changedDistance)
+	// 			$('.arrow-left.icon').animate({'width': '88vw'})
+	// 			// $('.arrow-left.icon').animate({'width':`+=${distanceMoved}`}, function(){
+	// 			// 	// console.log(growLeft, growRight)
+	// 			// })
+	// 			// $('.answerTwo').animate({'margin-right': `+=${distanceMoved}`}, function(){
+	// 			// 	// console.log(growLeft, growRight)
+	// 			// 	// growLeft = false
+	// 			// })
+	// 			growLeft = false
+	// 			growRight = false
 
-			} else if (growRight){
-				// console.log(changedDistance)
-				$('.arrow-right.icon').animate({'width': `+=${distanceMoved}`}, function(){
-					// console.log(growLeft, growRight)
+	// 		} else if (growRight){
+	// 			// console.log(changedDistance)
+	// 			$('.arrow-right.icon').animate({'width': '88vw'})
+	// 			// $('.arrow-right.icon').animate({'width': `+=${distanceMoved}`}, function(){
+	// 			// 	// console.log(growLeft, growRight)
 
-				})
-				$('.answerOne').animate({'margin-left': `+=${distanceMoved}`}, function(){
-					// console.log(growLeft, growRight)
-					// growRight = false
+	// 			// })
+	// 			// $('.answerOne').animate({'margin-left': `+=${distanceMoved}`}, function(){
+	// 			// 	// console.log(growLeft, growRight)
+	// 			// 	// growRight = false
 
-				})
+	// 			// })
 
-				growRight = false
-				growRight = false
-			}
-			perviousTouch = touches
-		}
+	// 			growRight = false
+	// 			growRight = false
+	// 		}
+	// 		perviousTouch = touches
+	// 	}
 
-	}
+	// }
+
+	// function arrowAnimation(){
+	// 	if()
+	// }
 
 	// arrowGrowing()
+
+// function arrowGrowing(){
+// 	document.addEventListener('touchmove', arrowMove, false)
+
+// 	function arrowMove(e){
+// 		touches = e.changedTouches[0].screenX;
+// 		distanceMoved = touches - perviousTouch
+// 		if(distanceMoved < 0){
+// 			$('.arrow-left.icon').animate({'width': '98vw'})
+// 		} else {
+// 			$('.arrow-right.icon').animate({'width': '98vw'})
+// 		}
+// 		perviousTouch = touches
+// 	}
+// }
+
+
 
 	function handleGesure(currentPage, leftPage, rightPage){
 
 		if (touchendX < touchstartX) {
-	        growLeft = true 
+	        // growLeft = true 
 	        if((touchstartX - touchendX) > 100){
 	        	distance = touchstartX - touchendX
 	        	$(`#${currentPage}`).hide()
@@ -184,11 +210,10 @@ $( document ).ready(function() {
 	        	$('.arrow-right.icon').css({'width':'80vw'})
 	        	$('.answerOne').css({'margin-left':'0'})
 	        	$('.answerTwo').css({'margin-right':'0'})
-
 	        }
 	    }
 	    if (touchendX > touchstartX) {
-	    	growRight = true;
+	    	// growRight = true;
 	    	if((touchendX - touchstartX) > 100){
 	    		distance = touchendX - touchstartX
 	        	$(`#${currentPage}`).hide()
@@ -206,6 +231,7 @@ $( document ).ready(function() {
 
 	function handleTurnDiv(){
 		if (touchendX < touchstartX) {
+
 	        if((touchstartX - touchendX) > 100){
 	        	$(`.answers`).hide()
 	        	$(`.explain`).css({'display':'flex'})
